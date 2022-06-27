@@ -7,7 +7,7 @@ const Splash = ({ navigation }) => {
   const [apiData, setApiData] = useState([])
   useEffect(() => {
     setTimeout(() => { navigation.replace("drawer") }, 1000)
-    // fetchAPI();
+    fetchAPI();
   }, [])
 
   const fetchAPI = () => {
