@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, View, Linking } from 'react-native'
 import React from 'react'
 import Icon from 'react-native-vector-icons/dist/MaterialIcons';
 
@@ -29,9 +29,11 @@ const Card = ({ data, OnFavourite, OnUnFavourite, FavouriteList }) => {
                 </View>
                 <Text style={styles.cardAPI}>{item.API}</Text>
                 <Text style={styles.cardDescription}>{item.Description}</Text>
-                <TouchableOpacity onPress={() => { }}>
-                    <Text style={styles.cardLink}>{item.Link}</Text>
-                </TouchableOpacity>
+                <Text style={styles.cardLink}>{item.Link}</Text>
+                <Text style={{ color: 'blue' }}
+                    onPress={() => Linking.openURL(item.link)}>
+                    About me
+                </Text>
             </View>
         </View>
     )
